@@ -3,16 +3,30 @@
 
 <head>
 	<meta charset="UTF-8">
-	<title>Development Area</title>
+	<title>Vue Js Basics</title>
 	<!-- ALL CSS FILES  -->
 	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="assets/css/style.css">
 	<link rel="stylesheet" href="assets/css/responsive.css">
 </head>
 
-<body>
+<body class="bg-dark">
 
+	<!-- Vue bind 
+			v-bind: attribute name or 
+			:attribute name -->
 
+	<section class="header bg-light py-5">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<h1>{{ title }}</h1>
+					<p>{{ content }}</p>
+					<a v-bind:class="btn.className" :href="btn.link">{{ btn.title }}</a>
+				</div>
+			</div>
+		</div>
+	</section>
 
 
 
@@ -33,6 +47,26 @@
 	<!-- Vue Js Load -->
 	<script src="assets/js/vue.min.js"></script>
 	<script src="assets/js/vue-router.js"></script>
+
+	<!-- Vue Js Script -->
+	<script>
+
+		let header = new Vue({
+			el: '.header',
+			data: {
+				title: 'We are Vue Js Developer.',
+				content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto iste similique, porro fuga molestiae cum quia, et reiciendis sint doloribus nam provident, doloremque animi quis nesciunt sunt! Facere incidunt repudiandae animi laborum soluta ut? Voluptatem dolorum assumenda quibusdam nihil adipisci illum facere et, eos, quam deleniti perferendis blanditiis facilis iure.',
+
+				btn: {
+					title: 'Read More',
+					link: 'https://facebook.com/iamtheridu',
+					className: 'btn btn-primary btn-sm'
+				}
+			}
+		});
+
+
+	</script>
 </body>
 
 </html>
