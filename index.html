@@ -67,6 +67,12 @@
 					<a :class="btn.classList.mclass + ' ' + btn.classList.pclass + ' ' + btn.classList.sclass"
 						:href="btn.link"> {{
 						btn.title }} </a>
+					<br><br>
+					<input v-model="name" type="text">
+					<input v-model="job" type="text">
+					<input v-model="age" type="text">
+					<hr>
+					<h1>My name is {{ name }}. I am a {{ job }} developer. I am {{ age }} years old.</h1>
 				</div>
 			</div>
 		</div>
@@ -137,7 +143,10 @@
 						pclass: 'btn-danger',
 						sclass: 'btn-sm'
 					}
-				}
+				},
+				name: null,
+				job: null,
+				age: null
 			}
 		});
 	</script>
