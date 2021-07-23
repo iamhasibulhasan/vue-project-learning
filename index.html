@@ -28,6 +28,30 @@
 		</div>
 	</section>
 
+	<section class="ifelse bg-light py-5">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+
+					<p v-if="alert.success" class="alert alert-success">Fill the form !</p>
+					<p v-if="alert.warning" class="alert alert-warning">Fill the form !</p>
+					<p v-if="alert.danger" class="alert alert-danger">Fill the form !</p>
+
+					<!-- Result Analysis -->
+
+					<h1 v-if="result > 0 && result < 33">You Are Failed.</h1>
+					<h1 v-else-if="result > 33 && result < 49">You Got D.</h1>
+					<h1 v-else-if="result > 49 && result < 59">You Got C.</h1>
+					<h1 v-else-if="result > 59 && result < 69">You Got B.</h1>
+					<h1 v-else-if="result > 69 && result < 79">You Got A.</h1>
+					<h1 v-else-if="result > 79 && result <= 100">You Got A+.</h1>
+					<h1 v-else-if="result > 100">Cross the limit!</h1>
+
+				</div>
+			</div>
+		</div>
+	</section>
+
 
 
 
@@ -51,6 +75,7 @@
 	<!-- Vue Js Script -->
 	<script>
 
+		// Header Section
 		let header = new Vue({
 			el: '.header',
 			data: {
@@ -65,7 +90,19 @@
 			}
 		});
 
+		// Ifelse Section
+		let ifelse = new Vue({
+			el: '.ifelse',
+			data: {
+				alert: {
+					danger: false,
+					success: true,
+					warning: true
+				},
 
+				result: 101
+			}
+		});
 	</script>
 </body>
 
