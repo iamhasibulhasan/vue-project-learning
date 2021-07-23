@@ -63,7 +63,10 @@
 							vegetable
 							}}
 						</li>
-					</ul>
+					</ul><br>
+					<a :class="btn.classList.mclass + ' ' + btn.classList.pclass + ' ' + btn.classList.sclass"
+						:href="btn.link"> {{
+						btn.title }} </a>
 				</div>
 			</div>
 		</div>
@@ -125,7 +128,16 @@
 		let forloop = new Vue({
 			el: '.forloop',
 			data: {
-				vegetables: ['Alo', 'Potol', 'Lao', 'Jinga', 'Kumra']
+				vegetables: ['Alo', 'Potol', 'Lao', 'Jinga', 'Kumra'],
+				btn: {
+					title: 'Read More',
+					link: 'https://facebook.com/iamtheridu',
+					classList: {
+						mclass: 'btn',
+						pclass: 'btn-danger',
+						sclass: 'btn-sm'
+					}
+				}
 			}
 		});
 	</script>
