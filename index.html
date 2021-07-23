@@ -52,6 +52,23 @@
 		</div>
 	</section>
 
+	<!-- For Loop -->
+
+	<section class="forloop bg-light py-5">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<ul class="list-group">
+						<li v-for="(vegetable, i) in vegetables" class="list-group-item bg-dark text-light">{{i+1}}. {{
+							vegetable
+							}}
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+
 
 
 
@@ -100,7 +117,15 @@
 					warning: true
 				},
 
-				result: 101
+				result: 10
+			}
+		});
+
+		// Forloop Section
+		let forloop = new Vue({
+			el: '.forloop',
+			data: {
+				vegetables: ['Alo', 'Potol', 'Lao', 'Jinga', 'Kumra']
 			}
 		});
 	</script>
