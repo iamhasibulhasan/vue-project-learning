@@ -68,9 +68,14 @@
 						:href="btn.link"> {{
 						btn.title }} </a>
 					<br><br>
-					<input v-model="name" type="text">
-					<input v-model="job" type="text">
-					<input v-model="age" type="text">
+					<div class="d-flex">
+						<label for="">Name :</label>
+						<input v-model="name" type="text"><br>
+						<label for="">Job :</label>
+						<input v-model="job" type="text"><br>
+						<label for="">Age :</label>
+						<input v-model="age" type="text">
+					</div>
 					<hr>
 					<h1>My name is {{ name }}. I am a {{ job }} developer. I am {{ age }} years old.</h1>
 				</div>
