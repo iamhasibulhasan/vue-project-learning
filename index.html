@@ -83,6 +83,22 @@
 		</div>
 	</section>
 
+	<section class="event-sec bg-light py-5">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+
+					<!-- Event Two Type Call v-on:click or @click -->
+
+					<a v-on:click="title = title1" class="btn btn-primary " href="#">Click</a>
+
+					<a @click="title = 'I am event two.'" class="btn btn-warning " href="#">Click2</a>
+					<h2>{{ title }}</h2>
+				</div>
+			</div>
+		</div>
+	</section>
+
 
 
 
@@ -154,6 +170,19 @@
 				age: null
 			}
 		});
+
+		// Event Section
+		let event = new Vue({
+			el: '.event-sec',
+			data: {
+				title: 'I am Hasibul Hasan',
+				title1: 'I am a Vue Js Developer'
+			}
+		});
+
+
+
+
 	</script>
 </body>
 
