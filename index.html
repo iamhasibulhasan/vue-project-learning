@@ -121,6 +121,38 @@
 	</section>
 
 
+	<!-- Page Builder -->
+	<section class="page-builder bg-light py-5">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<h2>Page Builder</h2>
+
+					<h1 :style="'color:' + color +';font-family:'+ff+';'" :class="'text-'+align">{{ title }}</h1>
+					<hr>
+					<input v-model="title" type="text" id="">
+					<input v-model="align" type="radio" name="align" id="Left" value="left"><label
+						for="Left">Left</label>
+
+					<input v-model="align" type="radio" name="align" id="Right" value="right"><label
+						for="Right">Right</label>
+
+					<input v-model="align" type="radio" name="align" id="Center" value="center"><label
+						for="Center">Center</label>
+
+					<input v-model="color" type="color" name="" id="">
+
+					<select v-model="ff" name="" id="">
+						<option value="">-select-</option>
+						<option value="Comfortaa">Comfortaa</option>
+						<option value="ADHE Sans Bold FREE">ADHE Sans Bold FREE</option>
+						<option value="Impact">Impact</option>
+					</select>
+				</div>
+			</div>
+	</section>
+
+
 
 
 
@@ -209,6 +241,17 @@
 			}
 		});
 
+		// page builder section
+
+		let builder = new Vue({
+			el: '.page-builder',
+			data: {
+				title: null,
+				align: null,
+				color: null,
+				ff: null,
+			}
+		});
 
 
 
