@@ -153,6 +153,37 @@
 	</section>
 
 
+	<!-- ToDo App -->
+	<section class="todo bg-light py-5">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<h1>Todo App</h1>
+
+					<div class="form-inline">
+						<input v-model="work_name" type="text" class="form-control">
+						<button @click="addWork" class="btn btn-primary">Add Work</button>
+					</div>
+					<p v-if="alert.danger" class="alert alert-danger">{{ alert.msg }}<button class="close"
+							data-dismiss="alert">&times;</button>
+					</p>
+					<p v-if="alert.success" class="alert alert-success">{{ alert.msg }} <button class="close"
+							data-dismiss="alert">&times;</button>
+					</p>
+					<p v-if="alert.warning" class="alert alert-warning">{{ alert.msg }} <button class="close"
+							data-dismiss="alert">&times;</button>
+					</p>
+					<hr>
+					<ul class="list-group">
+						<li v-for="(work, i) in works" class="list-group-item">{{(i+1)+'. '+ work }} <button
+								class="close" @click="deleteWork(i)">&times;</button></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
 
 
 
@@ -253,6 +284,41 @@
 			}
 		});
 
+		// Todo list
+		let todo = new Vue({
+			el: '.todo',
+			data: {
+				works: ['Sleep', 'Coding', 'Skills'],
+				work_name: null,
+				alert: {
+					msg: null,
+					danger: false,
+					success: false,
+					warning: false
+				}
+			},
+			methods: {
+				// Add Works
+				addWork: function () {
+					if (this.work_name == null) {
+						this.alert.danger = true;
+						this.alert.msg = 'Work is field required.'
+						this.alert.success = false;
+					} else {
+						this.works.push(this.work_name);
+						this.work_name = null;
+						this.alert.success = true;
+						this.alert.msg = 'Work added successful!.'
+					}
+				},
+				// Delete Works
+				deleteWork: function (index) {
+					this.works.splice(index, 1);
+					this.alert.success = true;
+					this.alert.msg = 'Work deleted successful!.'
+				}
+			}
+		});
 
 
 	</script>
